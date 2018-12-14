@@ -1,0 +1,8 @@
+.BaseSelect {
+  display: flex;
+  justify-content: space-between;
+}
+
+.BaseSelect__options {
+  border-radius: var(--base-border-radius);
+}

@@ -1,0 +1,3 @@
+export const GET_DOGS_BEGIN = "GET_DOGS_BEGIN";
+export const GET_DOGS_SUCCESS = "GET_DOGS_SUCCESS";
+export const GET_DOGS_FAIL = "GET_DOGS_FAIL";
