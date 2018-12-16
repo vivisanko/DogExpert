@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./SettingsForm.css";
-import BaseSelect from "../baseSelect/baseSelect";
+import BaseSelect from "../baseSelect/BaseSelect";
 import { sizeOptions, complexityOptions } from "./suggestedOptions";
 
 class SettingsForm extends Component {

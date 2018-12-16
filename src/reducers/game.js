@@ -1,39 +1,42 @@
 import * as types from "../actions/actionTypes";
 
-// const initialState = {
-//   list: {},
-//   breedsCollection: {},
-//   subBreedCollection: {}
-// };
 const initialState = {
-  list: {},
+  size: 4,
   loading: false,
-  error: null
+  error: null,
+  source: []
 };
 
-const dogs = (state = initialState, action) => {
+const game = (state = initialState, action) => {
   switch (action.type) {
-    case types.GET_DOGS_BEGIN:
+    case types.CREATE_NEW_GAME:
       return {
         ...state,
         loading: true,
         error: null
       };
-    case types.GET_DOGS_SUCCESS:
+    case types.CREATE_GAME_SUCCESS:
       return {
         ...state,
         loading: false,
-        list: action.result
+        source: action.result
       };
-    case types.GET_DOGS_FAIL:
+    case types.CREATE_GAME_FAIL:
       return {
         ...state,
         loading: false,
         error: action.error
+      };
+    case types.FINISH_GAME:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        source: []
       };
     default:
       return state;
   }
 };
 
-export default dogs;
+export default game;

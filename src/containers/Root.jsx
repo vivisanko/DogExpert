@@ -1,46 +1,34 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import PropTypes from "prop-types";
-import { BrowserRouter } from "react-router-dom";
-import { fetchDogs } from "../actions/index";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { fetchDogs } from "../actions/dogs";
 
 import App from "../App";
 
-class Root extends Component {
-  componentDidMount() {
-    const { dispatch } = this.props;
-    const query = {
+const Root = ({ store }) => {
+  store.dispatch(
+    fetchDogs({
       source: "list",
       exactly: "",
       amount: null
-    };
-    dispatch(fetchDogs(query));
-  }
-
-  render() {
-    return (
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    );
-  }
-}
-const mapStateToProps = state => ({
-  list: state.dogs.list,
-  loading: state.dogs.loading,
-  error: state.dogs.error
-});
-
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch
-  };
-}
+    })
+  );
+  return (
+    <Provider store={store}>
+      <Router>
+        <Route path="/" component={App} />
+      </Router>
+    </Provider>
+  );
+};
 
 Root.propTypes = {
-  dispatch: PropTypes.func.isRequired
+  store: PropTypes.shape({
+    dogs: PropTypes.any,
+    game: PropTypes.any,
+    user: PropTypes.any
+  }).isRequired
 };
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Root);
+
+export default Root;

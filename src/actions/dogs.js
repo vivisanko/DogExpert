@@ -1,4 +1,4 @@
-import * as types from "../constants/actionTypes";
+import * as types from "./actionTypes";
 import { defineUrl } from "../helpers/defineUrl";
 
 export const getDogsBegin = query => ({
