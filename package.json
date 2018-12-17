@@ -2,6 +2,7 @@
   "name": "dog-expert",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vivisanko.github.io/DogExpert/",
   "dependencies": {
     "@babel/core": "7.1.0",
     "@svgr/webpack": "2.4.1",
@@ -63,10 +64,13 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
+    "gh-pages": "^2.0.1",
     "prettier": "^1.15.3"
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
