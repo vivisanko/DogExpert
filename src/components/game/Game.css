@@ -1,0 +1,101 @@
+.Game {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  font-size: 1.6rem;
+}
+
+.Game__moveDescription {
+  flex-grow: 1;
+  flex-basis: 30rem;
+
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+
+  text-align: left;
+
+  color: var(--color-darken);
+  background-color: var(--color-primary);
+
+  font-size: 1.6em;
+  font-weight: 500;
+}
+
+.Game__description {
+  font-size: 0.7em;
+  font-weight: 300;
+}
+
+.Game__buttonNew {
+  display: block;
+
+  width: 100%;
+  max-width: 40rem;
+  height: 2em;
+  margin: auto;
+
+  cursor: pointer;
+
+  color: var(--color-darken);
+  border-radius: var(--base-border-radius);
+  outline-color: var(--color-secondary);
+  background-color: var(--color-secondary);
+
+  font-size: 0.7em;
+}
+
+.Game__area {
+  display: grid;
+  flex-grow: 6;
+  flex-basis: 70rem;
+
+  width: 100%;
+  margin: auto;
+  padding-top: 2rem;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.Game__boxElem {
+  height: 15rem;
+  margin: auto;
+
+  cursor: pointer;
+
+  outline-color: var(--color-secondary);
+}
+
+.Game__boxImage {
+  width: auto;
+  height: 100%;
+  max-height: 100%;
+
+  border-radius: var(--base-border-radius);
+}
+
+.Game__boxElem_inactive {
+  cursor: no-drop;
+
+  opacity: 0.3;
+}
+
+.Game__boxElem_selected {
+  box-sizing: border-box;
+
+  border: 0.3rem solid var(--color-accent);
+}
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  .Game__area {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Game__area {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
