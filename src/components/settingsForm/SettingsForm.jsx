@@ -18,7 +18,8 @@ class SettingsForm extends Component {
     this.setState({ [event.target.id]: event.target.value });
 
   handleSubmit = () => {
-    console.log("принято");
+    // eslint-disable-next-line
+    console.log("change settings");
   };
 
   render() {

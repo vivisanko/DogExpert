@@ -24,6 +24,7 @@ export function fetchDogs(query) {
       .then(resp => resp.json())
       .then(result => dispatch(getDogsSuccess(query, result.message)))
       .catch(err => {
+        // eslint-disable-next-line
         console.log("err", err);
         return dispatch(getDogsFail(err));
       });

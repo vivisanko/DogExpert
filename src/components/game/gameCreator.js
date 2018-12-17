@@ -24,6 +24,7 @@ const createGame = (size, list) => async dispatch => {
             .then(resp => resp.json())
             .then(result => result)
             .catch(error => {
+              // eslint-disable-next-line
               console.log("error", error);
             });
           return message;
@@ -33,7 +34,6 @@ const createGame = (size, list) => async dispatch => {
         Object.assign(gameQuery[index], el);
       });
       const result = createRandomSource(gameQuery);
-      console.log("result", result);
       const shuffleResult = shuffleSource(result);
       dispatch(createGameSuccess(shuffleResult));
     } catch (error) {
