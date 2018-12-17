@@ -7,13 +7,13 @@ import { links } from "./components/navigationPanel/navigationRoutes";
 export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App__header">
         <NavigationPanel links={links} />
       </header>
-      <main className="App-main">
+      <main className="App__main">
         <AppRouter />
       </main>
-      <footer className="App-footer" />
+      <footer className="App__footer" />
     </div>
   );
 }

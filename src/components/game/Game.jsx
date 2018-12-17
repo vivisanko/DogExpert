@@ -5,20 +5,17 @@ import classNames from "classnames";
 
 class Game extends Component {
   componentDidMount() {
-    const { size, list, createGame } = this.props;
-    createGame(size, list);
-    console.log("didMount");
+    this.createNewGame();
   }
 
-  // handleClick = breed => {
-  //   console.log("click on breed", breed);
-  //   this.props.selectDog(breed);
-  // };
+  createNewGame = () => {
+    const { size, list, createGame } = this.props;
+    createGame(size, list);
+  };
 
   render() {
     const { source, selectDog, selectedDogs, game } = this.props;
-
-    const box = source.map(el => {
+    const boxElem = source.map((el, index) => {
       const dogClass = classNames("Game__boxElem", {
         Game__boxElem_inactive: !el.isActive,
         Game__boxElem_selected:
@@ -26,7 +23,7 @@ class Game extends Component {
       });
       return (
         <div
-          key={el.image}
+          key={`${el.image}_${index.toString()}`}
           className={dogClass}
           role="button"
           onClick={() => selectDog(el, game)}
@@ -37,11 +34,37 @@ class Game extends Component {
         </div>
       );
     });
-    console.log("box", box);
 
-    // console.log("this.props.source", source);
-    // createSource(size, list);
-    return <div className="Game">{box}</div>;
+    return (
+      <div className="Game">
+        <div className="Game__moveDescription">
+          <p>
+            <span className="Game__description">conditions: </span>You need to
+            find dogs of the same breed
+          </p>
+          <p>
+            <span className="Game__description">selected breed: </span>
+            {selectedDogs.length !== 0
+              ? selectedDogs[0].breed
+              : "nothing selected"}
+          </p>
+          <p>
+            <span className="Game__description">score: </span>
+            {game.score}
+          </p>
+          <div className="Game__navigation">
+            <button
+              type="button"
+              className="Game__buttonNew"
+              onClick={this.createNewGame}
+            >
+              Start another game
+            </button>
+          </div>
+        </div>
+        <div className="Game__area">{boxElem}</div>
+      </div>
+    );
   }
 }
 
@@ -60,13 +83,6 @@ Game.propTypes = {
   ).isRequired,
   size: PropTypes.number.isRequired,
   game: PropTypes.object.isRequired
-  // gameQuery: PropTypes.arrayOf(
-  //   PropTypes.shape({
-  //     source: PropTypes.string,
-  //     exactly: PropTypes.string,
-  //     amount: PropTypes.number
-  //   })
-  // ).isRequired
 };
 
 export default Game;

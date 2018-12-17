@@ -12,13 +12,7 @@
   background-color: var(--color-background);
 }
 
-.App-logo {
-  height: 40vmin;
-
-  animation: App-logo-spin infinite 20s linear;
-}
-
-.App-header {
+.App__header {
   width: 100%;
   min-height: 6rem;
 
@@ -27,18 +21,14 @@
   font-size: calc(10px + 2vmin);
 }
 
-.App-main {
+.App__main {
   font-weight: 300;
 }
 
-.App-footer {
+.App__footer {
   min-height: 10rem;
 
   background-color: var(--color-primary-darken);
 
   font-weight: 700;
-}
-
-.App-link {
-  color: var(--color-darken);
 }
