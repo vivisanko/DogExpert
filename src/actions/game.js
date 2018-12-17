@@ -14,6 +14,14 @@ export const createGameFail = error => ({
   error
 });
 
-export const finishGame = () => ({
-  type: types.FINISH_GAME
+export const finishGame = score => ({
+  type: types.FINISH_GAME,
+  score
+});
+
+export const nextMoveGame = (selectedDogs, newInActiveDogs, score) => ({
+  type: types.NEXT_MOVE_GAME,
+  selectedDogs,
+  newInActiveDogs,
+  score
 });

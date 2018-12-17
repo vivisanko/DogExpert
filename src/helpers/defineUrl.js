@@ -17,8 +17,5 @@ export const urlDictionary = (exactly, amount) => {
 
 export function defineUrl({ source, exactly, amount }) {
   const url = urlDictionary(exactly, amount);
-  console.log("url", url);
-  console.log("url in helper", url[source]);
-
   return url[source];
 }
