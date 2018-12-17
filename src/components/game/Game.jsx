@@ -38,10 +38,7 @@ class Game extends Component {
     return (
       <div className="Game">
         <div className="Game__moveDescription">
-          <p>
-            <span className="Game__description">conditions: </span>You need to
-            find dogs of the same breed
-          </p>
+          <p>You need to find dogs of the same breed</p>
           <p>
             <span className="Game__description">selected breed: </span>
             {selectedDogs.length !== 0
