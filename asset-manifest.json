@@ -1,14 +1,14 @@
 {
   "main.css": "/DogExpert/static/css/main.815d5760.chunk.css",
-  "main.js": "/DogExpert/static/js/main.609cd32f.chunk.js",
-  "main.js.map": "/DogExpert/static/js/main.609cd32f.chunk.js.map",
+  "main.js": "/DogExpert/static/js/main.48cb4a7b.chunk.js",
+  "main.js.map": "/DogExpert/static/js/main.48cb4a7b.chunk.js.map",
   "static/js/1.75462f10.chunk.js": "/DogExpert/static/js/1.75462f10.chunk.js",
   "static/js/1.75462f10.chunk.js.map": "/DogExpert/static/js/1.75462f10.chunk.js.map",
   "runtime~main.js": "/DogExpert/static/js/runtime~main.daf2ab1c.js",
   "runtime~main.js.map": "/DogExpert/static/js/runtime~main.daf2ab1c.js.map",
-  "static/media/index.css": "/DogExpert/static/media/Montserrat-Light.51e18e6a.woff2",
+  "static/media/index.css": "/DogExpert/static/media/Montserrat-Light.100b38fa.ttf",
   "static/css/main.815d5760.chunk.css.map": "/DogExpert/static/css/main.815d5760.chunk.css.map",
   "index.html": "/DogExpert/index.html",
-  "precache-manifest.9e2587853fc86b24fb2a417b218aa5c4.js": "/DogExpert/precache-manifest.9e2587853fc86b24fb2a417b218aa5c4.js",
+  "precache-manifest.0b64c3c74ea525a215aef7d2cd8817c9.js": "/DogExpert/precache-manifest.0b64c3c74ea525a215aef7d2cd8817c9.js",
   "service-worker.js": "/DogExpert/service-worker.js"
 }

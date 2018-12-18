@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "cfa34d5a7fa9865e1b5b5ffcb33f8ae7",
-    "url": "/DogExpert/static/media/Montserrat-Medium.cfa34d5a.woff"
+    "revision": "279a5cf4c8060858d9acc9c9afbe7dcc",
+    "url": "/DogExpert/static/media/Montserrat-Medium.279a5cf4.woff2"
   },
   {
-    "revision": "609cd32fb58a0e580015",
+    "revision": "48cb4a7bf8763edfa2fb",
     "url": "/DogExpert/static/css/main.815d5760.chunk.css"
   },
   {
@@ -36,20 +36,24 @@ self.__precacheManifest = [
     "url": "/DogExpert/static/media/Montserrat-Medium.829a5714.eot"
   },
   {
+    "revision": "cfa34d5a7fa9865e1b5b5ffcb33f8ae7",
+    "url": "/DogExpert/static/media/Montserrat-Medium.cfa34d5a.woff"
+  },
+  {
+    "revision": "48cb4a7bf8763edfa2fb",
+    "url": "/DogExpert/static/js/main.48cb4a7b.chunk.js"
+  },
+  {
     "revision": "a98626e1aef6ceba5dfc1ee7112e235a",
     "url": "/DogExpert/static/media/Montserrat-Medium.a98626e1.ttf"
   },
   {
-    "revision": "609cd32fb58a0e580015",
-    "url": "/DogExpert/static/js/main.609cd32f.chunk.js"
-  },
-  {
-    "revision": "279a5cf4c8060858d9acc9c9afbe7dcc",
-    "url": "/DogExpert/static/media/Montserrat-Medium.279a5cf4.woff2"
-  },
-  {
     "revision": "affc72af2349de9e573d1031e569bdfc",
     "url": "/DogExpert/static/media/Montserrat-Bold.affc72af.eot"
+  },
+  {
+    "revision": "6e8e710be206ac66a855b9ef5eda3073",
+    "url": "/DogExpert/static/media/Montserrat-Bold.6e8e710b.woff2"
   },
   {
     "revision": "ca603acb9be81b66c67ea23ba219ce9d",
@@ -60,16 +64,8 @@ self.__precacheManifest = [
     "url": "/DogExpert/static/media/Montserrat-Bold.88932dad.ttf"
   },
   {
-    "revision": "6e8e710be206ac66a855b9ef5eda3073",
-    "url": "/DogExpert/static/media/Montserrat-Bold.6e8e710b.woff2"
-  },
-  {
     "revision": "149a9c4307e3ae8383fdd3f52b5d47ed",
     "url": "/DogExpert/static/media/Montserrat-Light.149a9c43.eot"
-  },
-  {
-    "revision": "100b38fa184634fc89bd07a84453992c",
-    "url": "/DogExpert/static/media/Montserrat-Light.100b38fa.ttf"
   },
   {
     "revision": "1e5287ee7aea966b3dcd23996658398c",
@@ -80,7 +76,11 @@ self.__precacheManifest = [
     "url": "/DogExpert/static/media/Montserrat-Light.51e18e6a.woff2"
   },
   {
-    "revision": "17a99ea2894ed32c3c03ec76198d4695",
+    "revision": "100b38fa184634fc89bd07a84453992c",
+    "url": "/DogExpert/static/media/Montserrat-Light.100b38fa.ttf"
+  },
+  {
+    "revision": "4f211627227acc67873c47f2b5b4ad69",
     "url": "/DogExpert/index.html"
   }
 ];
