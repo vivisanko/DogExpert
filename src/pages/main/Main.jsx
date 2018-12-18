@@ -1,5 +1,5 @@
 import React from "react";
 
-const Main = () => <div>Главная</div>;
+const Main = () => <div>Hello</div>;
 
 export default Main;
