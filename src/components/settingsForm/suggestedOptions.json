@@ -1,0 +1,12 @@
+{
+  "sizeOptions": [
+    { "value": 4, "text": "small" },
+    { "value": 6, "text": "medium" },
+    { "value": 10, "text": "large" }
+  ],
+  "complexityOptions": [
+    { "value": 3, "text": "beginner" },
+    { "value": 4, "text": "middle" },
+    { "value": 5, "text": "expert" }
+  ]
+}

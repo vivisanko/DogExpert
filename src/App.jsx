@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import AppRouter from "./components/router/AppRouter";
 import NavigationPanel from "./components/navigationPanel/NavigationPanel";
-import { links } from "./components/navigationPanel/navigationRoutes";
+import { links } from "./components/navigationPanel/navigationRoutes.json";
 
 export default function App() {
   return (

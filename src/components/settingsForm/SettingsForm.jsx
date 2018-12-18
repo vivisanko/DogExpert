@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./SettingsForm.css";
 import BaseSelect from "../baseSelect/BaseSelect";
-import { sizeOptions, complexityOptions } from "./suggestedOptions";
+import { sizeOptions, complexityOptions } from "./suggestedOptions.json";
 
 class SettingsForm extends Component {
   constructor(props) {

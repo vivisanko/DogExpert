@@ -65,6 +65,7 @@
 
   cursor: pointer;
 
+  border-radius: var(--base-border-radius);
   outline-color: var(--color-secondary);
 }
 
