@@ -16,7 +16,7 @@ const Root = ({ store }) => {
   );
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename="/DogExpert">
         <Route path="/" component={App} />
       </Router>
     </Provider>
