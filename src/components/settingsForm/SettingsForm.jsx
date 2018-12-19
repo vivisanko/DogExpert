@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SettingsForm.css";
+import PropTypes from "prop-types";
 import BaseSelect from "../baseSelect/BaseSelect";
 import { sizeOptions, complexityOptions } from "./suggestedOptions.json";
 
@@ -10,8 +11,17 @@ class SettingsForm extends Component {
     this.state = {
       name: "",
       size: 4,
-      complexity: 3
+      complexity: 2
     };
+  }
+
+  componentDidMount() {
+    const { name, size, complexity } = this.props;
+    this.setState({
+      name,
+      size,
+      complexity
+    });
   }
 
   handleChange = event =>
@@ -20,6 +30,10 @@ class SettingsForm extends Component {
   handleSubmit = () => {
     // eslint-disable-next-line
     console.log("change settings");
+    const { name, size, complexity } = this.state;
+    const { changeSettings, changeName } = this.props;
+    changeSettings(+size, +complexity);
+    changeName(name);
   };
 
   render() {
@@ -55,7 +69,11 @@ class SettingsForm extends Component {
           labelName="select game complexity:"
         />
         <div>
-          <button type="button" onClick={this.handleSubmit}>
+          <button
+            className="SettingsForm__button"
+            type="button"
+            onClick={this.handleSubmit}
+          >
             Set preferences
           </button>
         </div>
@@ -63,5 +81,13 @@ class SettingsForm extends Component {
     );
   }
 }
+
+SettingsForm.propTypes = {
+  name: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
+  complexity: PropTypes.number.isRequired,
+  changeSettings: PropTypes.func.isRequired,
+  changeName: PropTypes.func.isRequired
+};
 
 export default SettingsForm;

@@ -19,6 +19,12 @@ export const finishGame = score => ({
   score
 });
 
+export const changeGameSettings = (size, complexity) => ({
+  type: types.CHANGE_GAME_SETTINGS,
+  size,
+  complexity
+});
+
 export const nextMoveGame = (selectedDogs, newInActiveDogs, score) => ({
   type: types.NEXT_MOVE_GAME,
   selectedDogs,

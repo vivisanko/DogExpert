@@ -41,9 +41,7 @@ class Game extends Component {
           <p>Find dogs of the same breed</p>
           <p>
             <span className="Game__description">selected breed: </span>
-            {selectedDogs.length !== 0
-              ? selectedDogs[0].breed
-              : "nothing selected"}
+            {selectedDogs.length !== 0 ? selectedDogs[0].breed : ""}
           </p>
           <p>
             <span className="Game__description">score: </span>

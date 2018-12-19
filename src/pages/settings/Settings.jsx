@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import SettingsForm from "../../components/settingsForm/SettingsForm";
 import "./Settings.css";
+import SettingsFormContainer from "../../containers/SettingsFormContainer";
 
 class Settings extends Component {
   render() {
     return (
       <div className="Settings">
-        <SettingsForm />
+        <SettingsFormContainer />
       </div>
     );
   }

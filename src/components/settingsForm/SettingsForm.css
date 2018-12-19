@@ -19,3 +19,21 @@
   display: flex;
   justify-content: space-between;
 }
+
+.SettingsForm__button {
+  display: block;
+
+  width: 100%;
+  max-width: 40rem;
+  height: 2em;
+  margin: auto;
+
+  cursor: pointer;
+
+  color: var(--color-darken);
+  border-radius: var(--base-border-radius);
+  outline-color: var(--color-secondary);
+  background-color: var(--color-secondary);
+
+  font-size: 0.7em;
+}

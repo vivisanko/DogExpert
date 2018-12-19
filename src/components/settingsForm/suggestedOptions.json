@@ -5,8 +5,8 @@
     { "value": 10, "text": "large" }
   ],
   "complexityOptions": [
-    { "value": 3, "text": "beginner" },
+    { "value": 2, "text": "beginner" },
     { "value": 4, "text": "middle" },
-    { "value": 5, "text": "expert" }
+    { "value": 8, "text": "expert" }
   ]
 }

@@ -2,6 +2,7 @@ import * as types from "../actions/actionTypes";
 
 const initialState = {
   size: 4,
+  complexity: 2,
   loading: false,
   error: null,
   source: [],
@@ -43,6 +44,12 @@ const game = (state = initialState, action) => {
         selectedDogs: []
       };
     }
+    case types.CHANGE_GAME_SETTINGS:
+      return {
+        ...state,
+        size: action.size,
+        complexity: action.complexity
+      };
     case types.NEXT_MOVE_GAME: {
       const newSource = state.source.slice();
       action.newInActiveDogs.forEach(el => {
