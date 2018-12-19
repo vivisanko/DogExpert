@@ -4,5 +4,9 @@
 }
 
 .BaseSelect__options {
+  cursor: pointer;
+
+  color: var(--color-darken);
   border-radius: var(--base-border-radius);
+  background-color: var(--color-background);
 }

@@ -12,7 +12,9 @@
 }
 
 .SettingsForm__input {
+  color: var(--color-darken);
   border-radius: var(--base-border-radius);
+  background-color: var(--color-background);
 }
 
 .SettingsForm__preferencesElement {
@@ -34,6 +36,4 @@
   border-radius: var(--base-border-radius);
   outline-color: var(--color-secondary);
   background-color: var(--color-secondary);
-
-  font-size: 0.7em;
 }

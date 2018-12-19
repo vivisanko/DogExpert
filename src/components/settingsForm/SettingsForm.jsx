@@ -28,8 +28,6 @@ class SettingsForm extends Component {
     this.setState({ [event.target.id]: event.target.value });
 
   handleSubmit = () => {
-    // eslint-disable-next-line
-    console.log("change settings");
     const { name, size, complexity } = this.state;
     const { changeSettings, changeName } = this.props;
     changeSettings(+size, +complexity);
