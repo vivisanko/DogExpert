@@ -7,7 +7,8 @@ import gameMove from "../components/game/gameMove";
 const GameContainer = props => <Game {...props} />;
 function mapDispatchToProps(dispatch) {
   return {
-    createGame: (size, list) => dispatch(createGame(size, list)),
+    createGame: (size, list, complexity) =>
+      dispatch(createGame(size, list, complexity)),
     selectDog: (dog, game) => dispatch(gameMove(dog, game))
   };
 }
@@ -15,6 +16,7 @@ function mapDispatchToProps(dispatch) {
 const mapStateToProps = state => ({
   list: state.dogs.list,
   size: state.game.size,
+  complexity: state.game.complexity,
   game: state.game,
   source: state.game.source,
   selectedDogs: state.game.selectedDogs

@@ -6,7 +6,6 @@
   ],
   "complexityOptions": [
     { "value": 2, "text": "beginner" },
-    { "value": 4, "text": "middle" },
-    { "value": 8, "text": "expert" }
+    { "value": 4, "text": "expert" }
   ]
 }

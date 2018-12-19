@@ -4,8 +4,8 @@ const randomInteger = max => {
   return random;
 };
 
-export const createRandomBreeds = (size, arr) => {
-  const randomArr = new Array(size ** 2 / 2).fill(true);
+export const createRandomBreeds = (size, arr, complexity) => {
+  const randomArr = new Array(size ** 2 / complexity).fill(true);
   const result = [];
   randomArr.forEach(() => {
     const randomIndex = randomInteger(arr.length);
@@ -15,12 +15,12 @@ export const createRandomBreeds = (size, arr) => {
   return result;
 };
 
-export const createGameQuery = arrBreeds => {
+export const createGameQuery = (arrBreeds, complexity) => {
   const query = arrBreeds.map(breed => {
     const params = {
       source: "breedRandom",
       exactly: breed,
-      amount: 2
+      amount: complexity
     };
     return params;
   });

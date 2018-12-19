@@ -9,8 +9,8 @@ class Game extends Component {
   }
 
   createNewGame = () => {
-    const { size, list, createGame } = this.props;
-    createGame(size, list);
+    const { size, list, createGame, complexity } = this.props;
+    createGame(size, list, complexity);
   };
 
   render() {
@@ -19,7 +19,8 @@ class Game extends Component {
       const dogClass = classNames("Game__boxElem", {
         Game__boxElem_inactive: !el.isActive,
         Game__boxElem_selected:
-          selectedDogs.length !== 0 && selectedDogs[0].id === el.id
+          selectedDogs.length !== 0 &&
+          selectedDogs.some(dog => dog.id === el.id)
       });
       return (
         <div
@@ -77,6 +78,7 @@ Game.propTypes = {
     })
   ).isRequired,
   size: PropTypes.number.isRequired,
+  complexity: PropTypes.number.isRequired,
   game: PropTypes.object.isRequired
 };
 

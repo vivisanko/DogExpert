@@ -11,11 +11,11 @@ import {
   createGameFail
 } from "../../actions/game";
 
-const createGame = (size, list) => async dispatch => {
+const createGame = (size, list, complexity) => async dispatch => {
   if (Object.keys(list).length > 0) {
     dispatch(createNewGame());
-    const gameBreeds = createRandomBreeds(size, Object.keys(list));
-    const gameQuery = createGameQuery(gameBreeds);
+    const gameBreeds = createRandomBreeds(size, Object.keys(list), complexity);
+    const gameQuery = createGameQuery(gameBreeds, complexity);
     const urls = gameQuery.map(query => defineUrl(query));
     try {
       const arr = await Promise.all(

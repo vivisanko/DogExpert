@@ -1,7 +1,7 @@
 import * as types from "../actions/actionTypes";
 
 const initialState = {
-  name: "guest"
+  name: ""
 };
 const user = (state = initialState, action) => {
   switch (action.type) {
