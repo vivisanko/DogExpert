@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/DogExpert/precache-manifest.a07cb94505b1a3626a410d49de3a3e63.js"
+  "/DogExpert/precache-manifest.92fc16dbf8e898aee82fb5527862ee4b.js"
 );
 
 workbox.clientsClaim();
