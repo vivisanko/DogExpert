@@ -3,6 +3,6 @@ export default function fetchGetData(url) {
     if (resp.status !== 200) {
       Promise.reject(new Error(resp.statusText));
     }
-    return Promise.resolve(resp.json());
+    return resp.json();
   });
 }

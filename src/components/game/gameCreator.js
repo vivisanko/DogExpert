@@ -13,28 +13,30 @@ import {
 import { fetchDogs } from "../../actions/dogs";
 import fetchGetData from "../../api/fetchGetData";
 
-const createGame = () => async (dispatch, getState) => {
-  let store = getState();
-  let { list } = store.dogs;
-  const { size, complexity } = store.game;
-  if (Object.keys(list).length === 0) {
-    await dispatch(
-      fetchDogs({
-        source: "list",
-        exactly: "",
-        amount: null
-      })
-    ).then(() => {
-      store = getState();
-      list = { ...store.dogs.list };
-    });
-  }
-  dispatch(createNewGame());
-  const gameBreeds = createRandomBreeds(size, Object.keys(list), complexity);
-  const gameQuery = createGameQuery(gameBreeds, complexity);
-  const urls = gameQuery.map(query => defineUrl(query));
-
+const createGame = (list, size, complexity) => async dispatch => {
+  let breeds = list;
   try {
+    if (Object.keys(list).length === 0) {
+      breeds = await dispatch(
+        fetchDogs({
+          source: "list",
+          exactly: "",
+          amount: null
+        })
+      );
+      if (breeds.length === 0) {
+        throw new Error("no breeds found");
+      }
+    }
+    dispatch(createNewGame());
+    const gameBreeds = createRandomBreeds(
+      size,
+      Object.keys(breeds),
+      complexity
+    );
+    const gameQuery = createGameQuery(gameBreeds, complexity);
+    const urls = gameQuery.map(query => defineUrl(query));
+
     const arr = await Promise.all(
       urls.map(url => {
         const message = fetchGetData(url)

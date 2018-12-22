@@ -22,11 +22,15 @@ export function fetchDogs(query) {
   return dispatch => {
     dispatch(getDogsLoading(query));
     return fetchGetData(defineUrl(query))
-      .then(result => dispatch(getDogsSuccess(query, result.message)))
+      .then(result => {
+        dispatch(getDogsSuccess(query, result.message));
+        return result.message;
+      })
       .catch(err => {
         // eslint-disable-next-line
         console.log("err", err);
-        return dispatch(getDogsFail(err));
+        dispatch(getDogsFail(err));
+        return [];
       });
   };
 }

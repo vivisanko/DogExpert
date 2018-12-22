@@ -16,13 +16,11 @@ const gameMove = (dog, game) => dispatch => {
   const currentRound = game.selectedDogs.length + 1 < game.complexity;
   const dogsOneBreed = game.selectedDogs.concat(dog);
   const newSelectedDogs = currentRound ? dogsOneBreed : [];
-  const newInActiveDogs = currentRound ? [] : dogsOneBreed;
+  let newInActiveDogs = currentRound ? [] : dogsOneBreed;
   let diffScore = 0;
   if (newInActiveDogs.length !== 0) {
-    newInActiveDogs.forEach((el, index) => {
-      newInActiveDogs[index].isActive = false;
-      diffScore = game.complexity;
-    });
+    newInActiveDogs = newInActiveDogs.map(el => ({ ...el, isActive: false }));
+    diffScore = game.complexity;
   }
   const newScore = game.score + diffScore;
   const isGameOver = game.source.filter(el => el.isActive).length === 0;

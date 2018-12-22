@@ -38,7 +38,7 @@ class SettingsForm extends Component {
         <h3>Preferences</h3>
 
         <label className="SettingsForm__preferencesElement" htmlFor="name">
-          <span>name:</span>
+          <span>name: </span>
           <input
             className="SettingsForm__input"
             type="text"
@@ -53,14 +53,14 @@ class SettingsForm extends Component {
           value={+size}
           handleChange={this.handleChange}
           options={sizeOptions}
-          labelName="select game size:"
+          labelName="size:"
         />
         <BaseSelect
           id="complexity"
           value={+complexity}
           handleChange={this.handleChange}
           options={complexityOptions}
-          labelName="select game complexity:"
+          labelName="complexity:"
         />
         <div>
           <button
@@ -68,7 +68,7 @@ class SettingsForm extends Component {
             type="button"
             onClick={this.handleSubmit}
           >
-            Set preferences
+            Apply
           </button>
         </div>
       </form>

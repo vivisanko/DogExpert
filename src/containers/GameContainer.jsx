@@ -12,7 +12,12 @@ class GameContainer extends Component {
 }
 
 const mapDispatchToProps = {
-  createGame: () => dispatch => dispatch(createGame()),
+  createGame: () => (dispatch, getState) => {
+    const store = getState();
+    const { list } = store.dogs;
+    const { size, complexity } = store.game;
+    dispatch(createGame(list, size, complexity));
+  },
   selectDog: dog => (dispatch, getState) => {
     const store = getState();
     const { game } = store;

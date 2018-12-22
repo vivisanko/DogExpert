@@ -5,16 +5,12 @@ import classNames from "classnames";
 
 class Game extends Component {
   componentDidMount() {
-    this.createNewGame();
-  }
-
-  createNewGame = () => {
     const { createGame } = this.props;
     createGame();
-  };
+  }
 
   render() {
-    const { source, selectDog, selectedDogs, score } = this.props;
+    const { source, selectDog, selectedDogs, score, createGame } = this.props;
     const boxElem = source.map((el, index) => {
       const dogClass = classNames("Game__boxElem", {
         Game__boxElem_inactive: !el.isActive,
@@ -41,7 +37,7 @@ class Game extends Component {
         <div className="Game__moveDescription">
           <p>Find dogs of the same breed</p>
           <p>
-            <span className="Game__description">selected breed: </span>
+            <span className="Game__description">breed: </span>
             {selectedDogs.length !== 0 ? selectedDogs[0].breed : ""}
           </p>
           <p>
@@ -52,9 +48,9 @@ class Game extends Component {
             <button
               type="button"
               className="Game__buttonNew"
-              onClick={this.createNewGame}
+              onClick={createGame}
             >
-              Start another game
+              New game
             </button>
           </div>
         </div>
