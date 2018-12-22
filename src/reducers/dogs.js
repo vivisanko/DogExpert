@@ -1,10 +1,5 @@
 import * as types from "../actions/actionTypes";
 
-// const initialState = {
-//   list: {},
-//   breedsCollection: {},
-//   subBreedCollection: {}
-// };
 const initialState = {
   list: {},
   loading: false,
@@ -13,7 +8,7 @@ const initialState = {
 
 const dogs = (state = initialState, action) => {
   switch (action.type) {
-    case types.GET_DOGS_BEGIN:
+    case types.GET_DOGS_LOADING:
       return {
         ...state,
         loading: true,

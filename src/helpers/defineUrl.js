@@ -1,21 +1,15 @@
-export const urlDictionary = (exactly, amount) => {
-  const dictionary = {};
-  const sourceApi = {
-    list: "https://dog.ceo/api/breeds/list/all",
-    breed: `https://dog.ceo/api/breed/${exactly}/images`,
-    subBreed: `https://dog.ceo/api/breed/${exactly}/images`,
-    random: `https://dog.ceo/api/breeds/image/random/${amount}`,
-    breedRandom: `https://dog.ceo/api/breed/${exactly}/images/random/${amount}`,
-    subBreedRandom: `https://dog.ceo/api/breed/${exactly}/images/random/${amount}`
-  };
-  Object.keys(sourceApi).map(key => {
-    dictionary[key] = sourceApi[key];
-    return dictionary;
-  });
-  return dictionary;
-};
-
-export function defineUrl({ source, exactly, amount }) {
-  const url = urlDictionary(exactly, amount);
-  return url[source];
+export default function defineUrl({ source, exactly, amount }) {
+  if (source === "list") {
+    return "https://dog.ceo/api/breeds/list/all";
+  }
+  if (source === "breed" || source === "subBreed") {
+    return `https://dog.ceo/api/breed/${exactly}/images`;
+  }
+  if (source === "random") {
+    return `https://dog.ceo/api/breeds/image/random/${amount}`;
+  }
+  if (source === "breedRandom" || source === "subBreedRandom") {
+    return `https://dog.ceo/api/breed/${exactly}/images/random/${amount}`;
+  }
+  throw new Error(`unknown source type: ${source} `);
 }

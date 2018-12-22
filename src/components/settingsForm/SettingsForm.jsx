@@ -5,15 +5,11 @@ import BaseSelect from "../baseSelect/BaseSelect";
 import { sizeOptions, complexityOptions } from "./suggestedOptions.json";
 
 class SettingsForm extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: "",
-      size: 4,
-      complexity: 2
-    };
-  }
+  state = {
+    name: "",
+    size: 4,
+    complexity: 2
+  };
 
   componentDidMount() {
     const { name, size, complexity } = this.props;
@@ -55,14 +51,14 @@ class SettingsForm extends Component {
         <BaseSelect
           id="size"
           value={+size}
-          handleChange={event => this.handleChange(event)}
+          handleChange={this.handleChange}
           options={sizeOptions}
           labelName="select game size:"
         />
         <BaseSelect
           id="complexity"
           value={+complexity}
-          handleChange={event => this.handleChange(event)}
+          handleChange={this.handleChange}
           options={complexityOptions}
           labelName="select game complexity:"
         />

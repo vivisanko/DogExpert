@@ -1,8 +1,9 @@
 import * as types from "./actionTypes";
-import { defineUrl } from "../helpers/defineUrl";
+import fetchGetData from "../api/fetchGetData";
+import defineUrl from "../helpers/defineUrl";
 
-export const getDogsBegin = query => ({
-  type: types.GET_DOGS_BEGIN,
+export const getDogsLoading = query => ({
+  type: types.GET_DOGS_LOADING,
   query
 });
 
@@ -19,9 +20,8 @@ export const getDogsFail = error => ({
 
 export function fetchDogs(query) {
   return dispatch => {
-    dispatch(getDogsBegin(query));
-    return fetch(defineUrl(query))
-      .then(resp => resp.json())
+    dispatch(getDogsLoading(query));
+    return fetchGetData(defineUrl(query))
       .then(result => dispatch(getDogsSuccess(query, result.message)))
       .catch(err => {
         // eslint-disable-next-line

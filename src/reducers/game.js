@@ -16,6 +16,7 @@ const game = (state = initialState, action) => {
       return {
         ...state,
         source: [],
+        selectedDogs: [],
         loading: true,
         error: null
       };
@@ -33,7 +34,7 @@ const game = (state = initialState, action) => {
       };
     case types.FINISH_GAME: {
       const activeDogs = state.source.filter(el => el.isActive);
-      const newSource = state.source.slice();
+      const newSource = [...state.source];
       activeDogs.forEach(el => {
         newSource[el.id].isActive = false;
       });
@@ -51,7 +52,7 @@ const game = (state = initialState, action) => {
         complexity: action.complexity
       };
     case types.NEXT_MOVE_GAME: {
-      const newSource = state.source.slice();
+      const newSource = [...state.source];
       action.newInActiveDogs.forEach(el => {
         newSource[el.id] = el;
       });

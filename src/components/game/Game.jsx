@@ -9,12 +9,12 @@ class Game extends Component {
   }
 
   createNewGame = () => {
-    const { size, list, createGame, complexity } = this.props;
-    createGame(size, list, complexity);
+    const { createGame } = this.props;
+    createGame();
   };
 
   render() {
-    const { source, selectDog, selectedDogs, game } = this.props;
+    const { source, selectDog, selectedDogs, score } = this.props;
     const boxElem = source.map((el, index) => {
       const dogClass = classNames("Game__boxElem", {
         Game__boxElem_inactive: !el.isActive,
@@ -27,7 +27,7 @@ class Game extends Component {
           key={`${el.image}_${index.toString()}`}
           className={dogClass}
           role="button"
-          onClick={() => selectDog(el, game)}
+          onClick={() => selectDog(el)}
           onKeyUp={() => {}}
           tabIndex="-1"
         >
@@ -46,7 +46,7 @@ class Game extends Component {
           </p>
           <p>
             <span className="Game__description">score: </span>
-            {game.score}
+            {score}
           </p>
           <div className="Game__navigation">
             <button
@@ -68,18 +68,13 @@ Game.propTypes = {
   createGame: PropTypes.func.isRequired,
   selectDog: PropTypes.func.isRequired,
   selectedDogs: PropTypes.arrayOf(PropTypes.object).isRequired,
-  list: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)])
-  ).isRequired,
   source: PropTypes.arrayOf(
     PropTypes.shape({
       breed: PropTypes.string,
       image: PropTypes.string
     })
   ).isRequired,
-  size: PropTypes.number.isRequired,
-  complexity: PropTypes.number.isRequired,
-  game: PropTypes.object.isRequired
+  score: PropTypes.number.isRequired
 };
 
 export default Game;
