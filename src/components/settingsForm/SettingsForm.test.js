@@ -1,11 +1,18 @@
 import React from "react";
-import { mount } from "enzyme";
+import { render } from "enzyme";
 import SettingsForm from "./SettingsForm";
 
 describe("<SettingsForm />", () => {
-  describe("mount()", () => {
+  describe("render()", () => {
     test("renders the component", () => {
-      const wrapper = mount(<SettingsForm />);
+      const mockProps = {
+        name: "name",
+        size: 4,
+        complexity: 2,
+        changeSettings: jest.fn(),
+        changeName: jest.fn()
+      };
+      const wrapper = render(<SettingsForm {...mockProps} />);
 
       expect(wrapper.find(".SettingsForm")).toBeDefined();
     });
