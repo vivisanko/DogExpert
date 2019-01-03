@@ -3,19 +3,23 @@ import PropTypes from "prop-types";
 import "./BaseSelect.css";
 
 export default function BaseSelect(props) {
-  const { id, value, handleChange, options, labelName } = props;
+  const { name, value, handleChange, options, labelName } = props;
   const optionList = options.map(el => (
-    <option value={el.value} key={`${el.value}${id}`}>
+    <option
+      className="BaseSelect__option"
+      value={el.value}
+      key={`${el.value}${name}`}
+    >
       {el.text}
     </option>
   ));
 
   return (
-    <label className="BaseSelect" htmlFor={id}>
-      <span>{labelName}</span>
+    <label className="BaseSelect" htmlFor={name}>
+      <span className="BaseSelect__description">{labelName}</span>
       <select
-        className="BaseSelect__options"
-        id={id}
+        className="BaseSelect__select"
+        name={name}
         value={value}
         onChange={handleChange}
       >
@@ -25,7 +29,7 @@ export default function BaseSelect(props) {
   );
 }
 BaseSelect.propTypes = {
-  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(

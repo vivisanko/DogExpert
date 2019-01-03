@@ -3,20 +3,25 @@
   flex-direction: row;
   flex-wrap: wrap;
 
+  max-width: 160rem;
+  margin: auto;
+
   font-size: 1.6rem;
 }
 
 .Game__moveDescription {
   flex-grow: 1;
-  flex-basis: 30rem;
+  flex-basis: 20rem;
 
   width: 100%;
   height: auto;
+  margin: 2rem;
   padding: 2rem;
 
   text-align: left;
 
   color: var(--color-darken);
+  border-radius: var(--base-border-radius);
   background-color: var(--color-primary);
 
   font-size: 1.6em;
@@ -48,12 +53,12 @@
 
 .Game__area {
   display: grid;
-  flex-grow: 6;
+  flex-grow: 5;
   flex-basis: 70rem;
 
   width: 100%;
   margin: auto;
-  padding-top: 2rem;
+  padding: 2rem 0;
 
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;

@@ -11,15 +11,29 @@
   background-color: var(--color-primary);
 }
 
-.SettingsForm__input {
+.SettingsForm__description {
+  padding-right: 1rem;
+}
+
+input.SettingsForm__input {
+  display: block;
+
+  padding: 0 0.5rem;
+
   color: var(--color-darken);
-  border-radius: var(--base-border-radius);
-  background-color: var(--color-background);
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.SettingsForm__input:hover,
+.SettingsForm__input:focus {
+  border-bottom: 1px dotted var(--color-darken);
+  background-color: transparent;
 }
 
 .SettingsForm__preferencesElement {
   display: flex;
-  justify-content: space-between;
 }
 
 .SettingsForm__button {
